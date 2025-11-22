@@ -6,8 +6,11 @@ import { food_items } from "../food";
 import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 
+import { ImCross } from "react-icons/im";
+import CardOrder from "../components/CardOrder";
+
 const Home = () => {
-  let { cate, setCate, input } = useContext(DataContext);
+  let { cate, setCate, input, setShowCart, showCart } = useContext(DataContext);
   const filter = (category) => {
     if (category === "All") {
       setCate(food_items);
@@ -51,6 +54,22 @@ const Home = () => {
               type={item.food_type}
             />
           ))}
+        </div>
+        <div
+          className={`w-[35vw] h-full fixed top-0 right-0 bg-white shadow-xl p-6 transition-all duration 500 ${
+            showCart ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <header className="w-full flex justify-between items-center">
+            <span className="text-green-400 text-[18px] font-bold ">
+              Order Items{" "}
+            </span>
+            <ImCross
+              className="w-5 h-5 text-green-400  font-bold cursor-pointer hover:text-gray-600"
+              onClick={() => setShowCart(false)}
+            />
+          </header>
+          <CardOrder />
         </div>
       </div>
     </>
