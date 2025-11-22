@@ -13,10 +13,10 @@ const Nav = () => {
           <MdFastfood className="w-[30px] h-[30px] text-green-500" />
         </div>
         <form className="w-[45%] h-[60px] bg-white flex items-center px-5 gap-5 rounded-md shadow-md md:w-[70%]">
-          <IoSearch className="text-green-500 w-[20px] h-[20px] " />
+          <IoSearch className="text-green-500 w-5 h-5" />
           <input
             type="text"
-            className="w-[100%] outline-none md:text-[20px]  text-[16px]"
+            className="w-full outline-none md:text-[20px]  text-[16px]"
             placeholder="Search Items..."
           />
         </form>

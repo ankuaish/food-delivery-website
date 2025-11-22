@@ -26,7 +26,7 @@ const Categories = [
   },
   {
     id: 4,
-    name: "Noodles",
+    name: "Pasta",
     icon: <GiNoodles className="w-[60px] h-[60px] text-green-600" />,
   },
   {
