@@ -56,7 +56,7 @@ const Home = () => {
           ))}
         </div>
         <div
-          className={`w-[35vw] h-full fixed top-0 right-0 bg-white shadow-xl p-6 transition-all duration 500 ${
+          className={`w-full md:w-[35vw] h-full fixed top-0 right-0 bg-white shadow-xl p-6 transition-all duration 500 ${
             showCart ? "translate-x-0" : "translate-x-full"
           }`}
         >
