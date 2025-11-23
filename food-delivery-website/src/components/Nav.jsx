@@ -8,6 +8,7 @@ import { DataContext } from "../Context/DataContext";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { food_items } from "../food";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
   let { input, setInput, setCate, setShowCart } = useContext(DataContext);
@@ -19,6 +20,7 @@ const Nav = () => {
     );
     setCate(newlist);
   }, [input]);
+  const items = useSelector((state) => state.cart);
   return (
     <>
       <div className="w-full h-[100px] flex justify-between items-center px-5 md:px-8">
@@ -43,7 +45,7 @@ const Nav = () => {
           onClick={() => setShowCart(true)}
         >
           <span className="absolute top-0 right-2 text-green-500 font-bold text-[18px]">
-            0
+            {items.length}
           </span>
           <LuShoppingBag className="w-[30px] h-[30px] text-green-500" />
         </div>

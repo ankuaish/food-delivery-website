@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 import { ImCross } from "react-icons/im";
 import CardOrder from "../components/CardOrder";
-
+import { useSelector } from "react-redux";
 const Home = () => {
   let { cate, setCate, input, setShowCart, showCart } = useContext(DataContext);
   const filter = (category) => {
@@ -21,6 +21,8 @@ const Home = () => {
       setCate(newList);
     }
   };
+  const items = useSelector((state) => state.cart);
+
   return (
     <>
       {" "}
@@ -69,7 +71,18 @@ const Home = () => {
               onClick={() => setShowCart(false)}
             />
           </header>
-          <CardOrder />
+          <div className="w-full mt-8 flex flex-col gap-5">
+            {items.map((item, index) => (
+              <CardOrder
+                name={item.name}
+                price={item.price}
+                image={item.image}
+                id={item.id}
+                qty={item.qty}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
