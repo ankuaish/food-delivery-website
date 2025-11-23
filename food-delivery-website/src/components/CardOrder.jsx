@@ -14,7 +14,7 @@ const CardOrder = ({ name, price, image, id, qty }) => {
             <img src={image} alt="" className="object-cover" />
           </div>
           <div className="w-[40%] h-full flex flex-col gap-2 justify-around">
-            <div className="text-md text-center text-gray-800 font-semibold">
+            <div className="text-md  text-gray-800 font-semibold">
               {name}
             </div>
             <div className="w-[100px] h-[45px] bg-slate-400 flex rounded-lg overflow-hidden shadow-lg border-2 border-green-400">
